@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed | Shift Happens</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #123b91 0%,
+                    #071d45 45%,
+                    #020812 100%
+                );
+
+            color: white;
+            font-family: Arial, sans-serif;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        /* GIANT LOGO BEHIND THE ORDER BOX */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+
+            background-image: url("images/logo.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: min(120vw, auto);
+
+            opacity: 0.7;
+
+            pointer-events: none;
+            z-index: 0;
+        }
+
+
+        /* ORDER CONFIRMED BOX */
+
+        .success-box {
+            position: relative;
+            z-index: 1;
+
+            width: min(650px, 80%);
+            padding: 60px 40px;
+
+            text-align: center;
+
+            background: rgba(5, 15, 32, 0.88);
+
+            border: 2px solid #16dfff;
+
+            box-shadow:
+                0 0 15px rgba(22, 223, 255, 0.6),
+                inset 0 0 25px rgba(22, 223, 255, 0.08);
+        }
+
+
+        .success-small {
+            color: #16dfff;
+
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 4px;
+        }
+
+
+        .success-box h1 {
+            margin: 15px 0;
+
+            font-size: clamp(42px, 7vw, 72px);
+            font-style: italic;
+
+            line-height: 0.95;
+
+            text-shadow:
+                3px 3px 0 #168cff;
+        }
+
+
+        .success-box p {
+            margin: 25px auto 35px;
+
+            max-width: 470px;
+
+            color: #c9d8ea;
+
+            line-height: 1.6;
+        }
+
+
+        .success-button {
+            display: inline-block;
+
+            padding: 16px 32px;
+
+            background: #16dfff;
+            color: #04101c;
+
+            text-decoration: none;
+
+            font-weight: 900;
+            letter-spacing: 2px;
+
+            border: 1px solid #7ff3ff;
+
+            box-shadow:
+                0 0 18px rgba(22, 223, 255, 0.45);
+        }
+
+
+        .success-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 28px rgba(22, 223, 255, 0.75);
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main class="success-box">
+
+        <div class="success-small">
+            SHIFT HAPPENS MOTOR CO.
+        </div>
+
+        <h1>
+            ORDER<br>
+            CONFIRMED
+        </h1>
+
+        <p>
+            Your payment was successful.
+            Thank you for supporting Shift Happens.
+        </p>
+
+        <a class="success-button" href="shop.html">
+            RETURN TO SHOP
+        </a>
+
+    </main>
+
+    <script>
+        // Payment succeeded — clear the customer's cart
+        localStorage.removeItem("shiftHappensCart");
+    </script>
+
+</body>
+</html>
