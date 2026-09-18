@@ -35,8 +35,8 @@ app.post("/create-checkout-session", async (req, res) => {
                 allowed_countries: ["US"]
             },
 
-            success_url: "http://localhost:3000/success.html",
-            cancel_url: "http://localhost:3000/cart.html"
+            success_url: `${process.env.BASE_URL}/success.html`,
+            cancel_url: `${process.env.BASE_URL}/cart.html`
         });
 
         res.json({ url: session.url });
