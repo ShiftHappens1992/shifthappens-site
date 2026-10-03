@@ -245,44 +245,16 @@ function renderCart() {
 
 }
 
-
-
 /* =========================
    CHECKOUT
 ========================= */
 
-checkoutButton.addEventListener("click", async () => {
-
+checkoutButton.addEventListener("click", () => {
     if (cart.length === 0) {
         return;
     }
 
-    try {
-
-        const response = await fetch("/create-checkout-session", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ cart: cart })
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) {
-            throw new Error(data.error || "Checkout failed");
-        }
-
-        window.location.href = data.url;
-
-    } catch (error) {
-
-        console.error("Checkout error:", error);
-        alert("Unable to start checkout. Please try again.");
-
-    }
-
+    window.location.href = "/checkout.html";
 });
-
 
 renderCart();
