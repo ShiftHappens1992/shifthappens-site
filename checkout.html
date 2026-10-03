@@ -214,10 +214,45 @@
             grid-column: auto;
         }
     }
+    .checkout-corner-logo {
+    position: fixed;
+    top: 30px;
+    width: 110px;
+    height: auto;
+    z-index: 10;
+
+    filter: drop-shadow(0 0 10px rgba(53, 200, 255, 0.7));
+}
+
+.checkout-logo-left {
+    left: 35px;
+}
+
+.checkout-logo-right {
+    right: 35px;
+}
+
+@media(max-width: 650px) {
+    .checkout-corner-logo {
+        width: 65px;
+        top: 15px;
+    }
+
+    .checkout-logo-left {
+        left: 15px;
+    }
+
+    .checkout-logo-right {
+        right: 15px;
+    }
+}
 </style>
 </head>
 
 <body>
+    <img src="YOUR-LOGO-PATH" class="checkout-corner-logo checkout-logo-left" alt="Shift Happens">
+
+<img src="YOUR-LOGO-PATH" class="checkout-corner-logo checkout-logo-right" alt="Shift Happens">
 
     <main class="checkout-page">
 
