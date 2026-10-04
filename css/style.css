@@ -2115,4 +2115,303 @@ footer {
         max-width: 100% !important;
         height: auto !important;
     }
+}/* =========================================
+   FINAL MOBILE WIDTH / BUILD FLOW FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* -------------------------------------
+       KILL DESKTOP WIDTH / SIDE OVERFLOW
+    ------------------------------------- */
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    main {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    section {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        left: auto !important;
+        right: auto !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -------------------------------------
+       NORMAL MOBILE CONTAINERS
+    ------------------------------------- */
+
+    .container {
+        width: calc(100% - 40px) !important;
+        max-width: none !important;
+
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        box-sizing: border-box !important;
+
+        left: auto !important;
+        right: auto !important;
+
+        transform: none !important;
+    }
+
+
+    /* -------------------------------------
+       BUILD SECTION
+    ------------------------------------- */
+
+    #build {
+        position: relative !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        overflow: visible !important;
+
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+
+        clear: both !important;
+    }
+
+    #build .container {
+        position: relative !important;
+
+        width: calc(100% - 40px) !important;
+
+        margin: 0 20px !important;
+
+        left: auto !important;
+        right: auto !important;
+
+        transform: none !important;
+    }
+
+    /* Fix cut-off "THE BUILD" and "My Car Version 2." */
+
+    #build .section-label,
+    #build h2 {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        transform: none !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #build h2 {
+        font-size: 38px !important;
+        line-height: 1.05 !important;
+        margin-bottom: 35px !important;
+    }
+
+
+    /* Build becomes normal top-to-bottom flow */
+
+    .spec-layout {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        margin: 0 !important;
+
+        transform: none !important;
+    }
+
+    .spec-panel {
+        width: 100% !important;
+        position: relative !important;
+        margin: 0 !important;
+    }
+
+
+    /* -------------------------------------
+       BUILD IMAGES
+    ------------------------------------- */
+
+    .story-column {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        margin: 30px 0 0 !important;
+
+        transform: none !important;
+    }
+
+    .v2-close,
+    .dash-pic {
+        position: relative !important;
+
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        margin: 0 0 28px 0 !important;
+
+        transform: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -------------------------------------
+       WHY DOCUMENT THE BUILD
+    ------------------------------------- */
+
+    .story-panel {
+        position: relative !important;
+
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        margin: 0 !important;
+        padding: 28px !important;
+
+        transform: none !important;
+
+        box-sizing: border-box !important;
+
+        z-index: 1 !important;
+    }
+
+    .warning-box {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        margin-bottom: 0 !important;
+    }
+
+
+    /* -------------------------------------
+       FAQ MUST START AFTER BUILD
+    ------------------------------------- */
+
+    #faq {
+        position: relative !important;
+
+        display: block !important;
+
+        width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        margin-top: 0 !important;
+
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+
+        transform: none !important;
+
+        clear: both !important;
+
+        z-index: 0 !important;
+    }
+
+    #faq .container {
+        width: calc(100% - 40px) !important;
+
+        margin: 0 20px !important;
+
+        left: auto !important;
+        right: auto !important;
+
+        transform: none !important;
+    }
+
+
+    /* -------------------------------------
+       ABOUT + FOOTER FULL WIDTH
+    ------------------------------------- */
+
+    #about {
+        width: 100% !important;
+        height: auto !important;
+
+        clear: both !important;
+
+        overflow: visible !important;
+    }
+
+    #about .container {
+        width: calc(100% - 40px) !important;
+        margin: 0 20px !important;
+    }
+
+    footer {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        box-sizing: border-box !important;
+    }
 }
