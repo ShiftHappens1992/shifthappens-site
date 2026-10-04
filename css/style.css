@@ -2538,4 +2538,68 @@ footer {
         margin-left: 20px !important;
         margin-right: 20px !important;
     }
+}@media (max-width: 768px) {
+
+    /* Make build section fully contain everything inside it */
+    #build {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        display: block !important;
+        padding-bottom: 70px !important;
+    }
+
+    #build .container {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
+
+    .spec-layout {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
+
+    .story-column {
+        position: relative !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        margin-bottom: 40px !important;
+    }
+
+    .story-panel {
+        position: relative !important;
+
+        top: 0 !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+
+        transform: none !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin-bottom: 0 !important;
+    }
+
+    /* Force FAQ to start AFTER the build section */
+    #faq {
+        position: relative !important;
+
+        top: 0 !important;
+        left: 0 !important;
+
+        transform: none !important;
+
+        margin-top: 0 !important;
+        clear: both !important;
+
+        z-index: 1 !important;
+    }
 }
