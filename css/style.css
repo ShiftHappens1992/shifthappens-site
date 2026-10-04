@@ -2603,3 +2603,9 @@ footer {
         z-index: 1 !important;
     }
 }
+@media (max-width: 768px) {
+
+    #build {
+        margin-bottom: 0 !important;
+    }
+    
