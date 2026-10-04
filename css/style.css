@@ -1885,4 +1885,234 @@ footer {
         max-width: 100%;
         height: auto;
     }
+}/* =========================================
+   MOBILE LAYOUT FIXES
+========================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Make all major sections actually fill the phone */
+    .section,
+    #guide,
+    #build,
+    #faq,
+    #about,
+    footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* =========================
+       GUIDE / CHOOSE A SYSTEM
+    ========================= */
+
+    #guide {
+        min-height: 0 !important;
+        height: auto !important;
+        overflow: hidden;
+        padding: 45px 0 !important;
+    }
+
+    #guide .container {
+        position: relative;
+        width: 92% !important;
+        max-width: 92% !important;
+        margin: 0 auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    #guide .section-label,
+    #guide h2 {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        margin-left: 0 !important;
+        transform: none !important;
+        max-width: 100% !important;
+    }
+
+    #guide h2 {
+        font-size: 34px !important;
+        line-height: 1.05 !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* Stack guide cards closely */
+    #guide .card-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+
+        width: 100% !important;
+
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        transform: none !important;
+    }
+
+    #guide .card-grid > * {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        box-sizing: border-box;
+    }
+
+    /* Guide background stays behind cards */
+    .guide-background {
+        position: absolute !important;
+        inset: 0 !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: cover !important;
+    }
+
+
+    /* =========================
+       MY BUILD
+    ========================= */
+
+    #build .container {
+        width: 92% !important;
+        max-width: 92% !important;
+        margin: 0 auto !important;
+    }
+
+    .spec-layout {
+        display: block !important;
+
+        width: 100% !important;
+
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+
+        transform: none !important;
+    }
+
+    .spec-panel {
+        width: 100% !important;
+    }
+
+    .story-column {
+        position: relative !important;
+
+        width: 100% !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        transform: none !important;
+
+        margin-top: 25px !important;
+    }
+
+    /* V2 engine picture */
+    .v2-close {
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 360px !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        margin: 20px auto !important;
+
+        display: block !important;
+    }
+
+    /* Interior/dash picture */
+    .dash-pic {
+        position: relative !important;
+
+        width: 100% !important;
+        max-width: 360px !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        margin: 20px auto !important;
+
+        display: block !important;
+    }
+
+    .story-panel {
+        position: relative !important;
+
+        width: 100% !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        transform: none !important;
+
+        margin: 20px 0 0 !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       FAQ + ABOUT
+    ========================= */
+
+    #faq .container,
+    #about .container {
+        width: 92% !important;
+        max-width: 92% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        left: auto !important;
+        right: auto !important;
+
+        transform: none !important;
+    }
+
+    #faq,
+    #about {
+        overflow: hidden;
+    }
+
+
+    /* Safety net for pictures */
+    #build img,
+    #guide img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
 }
