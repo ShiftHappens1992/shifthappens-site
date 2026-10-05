@@ -78,15 +78,15 @@ app.post("/create-checkout-session", async (req, res) => {
 }
 
         const lineItems = cart.map(item => ({
-            price_data: {
-                currency: "usd",
-                product_data: {
-                    name: "13B S4/S5 HALTECH ELITE 1500 MIATA SWAP HARNESS"
-                },
-                unit_amount: 84999
-            },
-            quantity: item.quantity
-        }));
+    price_data: {
+        currency: "usd",
+        product_data: {
+            name: item.name
+        },
+        unit_amount: Math.round(item.price * 100)
+    },
+    quantity: item.quantity
+}));
 const shippingPrice = Math.round(
     parseFloat(shipping.rate) * 100
 );

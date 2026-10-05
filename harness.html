@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>13B Haltech Harness | Shift Happens</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        body {
+            margin: 0;
+            background: #050b13;
+            color: white;
+        }
+
+        .harness-page {
+            width: min(1200px, 92%);
+            margin: 60px auto 100px;
+        }
+
+        .back-shop {
+            display: inline-block;
+            margin-bottom: 30px;
+
+            color: #42cfff;
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+        }
+
+        .harness-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+
+        /* =========================
+           PRODUCT IMAGE
+        ========================= */
+
+        .harness-image-box {
+            position: sticky;
+            top: 100px;
+
+            padding: 25px;
+
+            border: 2px solid #29cfff;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #09366d 0%,
+                    #071424 70%
+                );
+
+            box-shadow:
+                0 0 18px rgba(0, 210, 255, .55);
+        }
+
+        .harness-image-box img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            object-fit: contain;
+        }
+
+        .harness-badge {
+            display: inline-block;
+
+            margin-bottom: 20px;
+
+            padding: 9px 14px;
+
+            background: white;
+            color: #111;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           PRODUCT INFO
+        ========================= */
+
+        .harness-category {
+            margin: 0 0 10px;
+
+            color: #31cfff;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+        .harness-title {
+            margin: 0;
+
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: .95;
+
+            text-transform: uppercase;
+        }
+
+        .harness-price {
+            margin: 25px 0;
+
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        .harness-intro {
+            color: #d8e4ed;
+
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CONNECTOR DESCRIPTION
+        ========================= */
+
+        .connector-box {
+            margin-top: 35px;
+
+            padding: 25px;
+
+            border: 1px solid #1b536d;
+
+            background: #07121d;
+        }
+
+        .connector-box h2 {
+            margin-top: 0;
+
+            font-size: 21px;
+
+            color: #42cfff;
+        }
+
+        .connector-list {
+            padding-left: 20px;
+
+            color: #d8e4ed;
+
+            line-height: 1.75;
+        }
+
+        .connector-list strong {
+            color: white;
+        }
+
+
+        /* =========================
+           OPTIONS
+        ========================= */
+
+        .configuration {
+            margin-top: 35px;
+        }
+
+        .configuration-title {
+            margin-bottom: 20px;
+
+            font-size: 25px;
+        }
+
+        .option-group {
+            margin-bottom: 25px;
+
+            padding: 22px;
+
+            border: 1px solid #1c617d;
+
+            background: #07121d;
+        }
+
+        .option-group label.option-title {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #42cfff;
+
+            font-size: 14px;
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+        .option-group p {
+            margin-top: 0;
+
+            color: #91a8b7;
+
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .option-group select {
+            width: 100%;
+
+            padding: 14px;
+
+            background: #020910;
+            color: white;
+
+            border: 1px solid #29cfff;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+
+        /* =========================
+           ORDER SUMMARY
+        ========================= */
+
+        .configured-summary {
+            margin-top: 35px;
+
+            padding: 25px;
+
+            border: 2px solid #29cfff;
+
+            background: #030a11;
+
+            box-shadow:
+                0 0 16px rgba(0, 210, 255, .25);
+        }
+
+        .configured-summary h3 {
+            margin-top: 0;
+
+            font-size: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            padding: 11px 0;
+
+            border-bottom: 1px solid #183242;
+        }
+
+        .summary-label {
+            color: #829dad;
+        }
+
+        .summary-value {
+            text-align: right;
+
+            font-weight: 700;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 20px;
+
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        #add-configured-harness {
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 17px;
+
+            background: transparent;
+            color: #35d6ff;
+
+            border: 2px solid #35d6ff;
+
+            font-size: 15px;
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            cursor: pointer;
+
+            text-transform: uppercase;
+
+            box-shadow:
+                0 0 10px rgba(53, 214, 255, .35);
+        }
+
+        #add-configured-harness:hover {
+            background: #35d6ff;
+            color: #021019;
+        }
+
+        .configuration-note {
+            margin-top: 12px;
+
+            color: #758b99;
+
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width: 800px) {
+
+            .harness-page {
+                margin-top: 35px;
+            }
+
+            .harness-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .harness-image-box {
+                position: relative;
+                top: auto;
+            }
+
+            .harness-title {
+                font-size: 38px;
+            }
+
+            .summary-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .summary-value {
+                text-align: left;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body class="shop-page">
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="site-header">
+
+    <div class="container nav-wrap">
+
+        <a class="logo" href="index.html">
+
+            <img
+                src="images/logo.PNG"
+                alt="Shift Happens Logo"
+            >
+
+        </a>
+
+
+        <button
+            class="menu-button"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
+
+
+        <nav class="nav">
+
+            <a href="index.html#home">Home</a>
+
+            <a href="index.html#guide">
+                Rotary Miata
+            </a>
+
+            <a href="index.html#build">
+                My Build
+            </a>
+
+            <a href="index.html#faq">
+                FAQ
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+
+            <a
+                href="cart.html"
+                class="cart-link"
+                aria-label="Shopping cart"
+            >
+
+                <span class="cart-icon">
+                    🛒
+                </span>
+
+                <span id="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================
+     HARNESS PRODUCT
+===================================== -->
+
+<main class="harness-page">
+
+
+    <a
+        href="shop.html"
+        class="back-shop"
+    >
+        ← BACK TO SHOP
+    </a>
+
+
+    <div class="harness-layout">
+
+
+        <!-- =========================
+             LEFT SIDE
+        ========================== -->
+
+        <div class="harness-image-box">
+
+            <span class="harness-badge">
+                BEST SELLER
+            </span>
+
+
+            <img
+                src="images/harness.PNG"
+                alt="13B Haltech Elite 1500 Miata Swap Harness"
+            >
+
+        </div>
+
+
+
+        <!-- =========================
+             RIGHT SIDE
+        ========================== -->
+
+        <div class="harness-details">
+
+
+            <p class="harness-category">
+                ROTARY PARTS
+            </p>
+
+
+            <h1 class="harness-title">
+
+                13B S4/S5
+                HALTECH ELITE 1500
+                MIATA SWAP HARNESS
+
+            </h1>
+
+
+            <div class="harness-price">
+
+                $849.99
+
+            </div>
+
+
+            <p class="harness-intro">
+
+                A complete engine-management wiring solution
+                for S4/S5 13B-powered Miata swaps using a
+                Haltech Elite 1500.
+
+                The harness is built, labeled, and organized
+                to remove as much guesswork as possible from
+                the wiring portion of the swap.
+
+            </p>
+
+
+
+            <!-- =========================
+                 CONNECTOR LIST
+            ========================== -->
+
+            <div class="connector-box">
+
+
+                <h2>
+                    HARNESS CONNECTIONS
+                </h2>
+
+
+                <ul class="connector-list">
+
+                    <li>
+                        <strong>
+                            Haltech Elite 1500 ECU connections
+                    </li>
+
+                    <li>
+                        <strong>
+                            Injector connectors
+                        </strong>
+                        — Available Styles: Bosch EV1, Bosch EV6/14, or Denso
+                        connector style.
+                    </li>
+
+                    <li>
+                        <strong>
+                            CAS wiring
+                        </strong>
+                        — Optional FC or FD CAS sub-harness.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Ignition wiring
+                        </strong>
+                        — Free 8-pin connector for what you need or IGN1a Smart coil sub-harness
+                    </li>
+
+                    <li>
+                        <strong>
+                            Intake air temperature sensor
+                        </strong>
+                        GM Style
+                    </li>
+
+                    <li>
+                        <strong>
+                            Coolant temperature sensor
+                        </strong>
+                        GM Style
+                    </li>
+
+                    <li>
+                        <strong>
+                            MAP sensor
+                        </strong>
+                        for supported Delphi three-wire sensors.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Fuel pressure sensor
+                        </strong>
+                        for supported Delphi three-wire sensors.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Oil pressure sensor
+                        </strong>
+                        for supported Delphi three-wire sensors.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Alternator connection
+                        </strong>
+                        
+                    </li>
+
+                    <li>
+                        <strong>
+                            CAN communication connection
+                        </strong>
+                        for compatible CAN devices.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Knock
+                        </strong>
+                        Bosch EV1 style
+                    </li>
+
+                    <li>
+                        <strong>
+                            4x Digital Pulsed Outputs
+                        </strong>
+                        Fan relay trigger, Tachometer, Secondary fans, ETC.
+                    </li>
+
+                    <li>
+                        <strong>
+                           4x Spare Synchronised Pulsed Inputs
+                        </strong>
+                        Vechicle speed, Flex fuel, Fuel flow, Etc.
+                    </li>
+
+                    <li>
+                        <strong>
+                           3x Spare Analogue Volatage Input
+                        </strong>
+                        Other pressure sensors, Other temp. sensors, Etc.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Pre-labeled wiring
+                        </strong>
+                        to make installation and troubleshooting
+                        easier.
+                    </li>
+
+                    <li>
+                        <strong>
+                            Start guide and ECU pinout
+                        </strong>
+                        included with the harness.
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 CONFIGURATION
+            ========================== -->
+
+            <div class="configuration">
+
+
+                <h2 class="configuration-title">
+
+                    BUILD YOUR HARNESS
+
+                </h2>
+
+
+
+                <!-- INJECTORS -->
+
+                <div class="option-group">
+
+                    <label
+                        class="option-title"
+                        for="injector-option"
+                    >
+
+                        Injector Connectors
+
+                    </label>
+
+
+                    <p>
+
+                        Choose the injector connector
+                        configuration installed on your engine.
+
+                    </p>
+
+
+                    <select id="injector-option">
+
+                       <option value="None">
+                           Select One
+                        </option>
+
+                        <option value="Bosch EV1">
+                            Bosch EV1
+                        </option>
+                        
+                        <option value="Bosch EV6/14">
+                            Bosch EV6/14
+                        </option>
+
+                        <option value="Denso">
+                            Denso
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- CAS -->
+
+                <div class="option-group">
+
+                    <label
+                        class="option-title"
+                        for="cas-option"
+                    >
+
+                        CAS Sub-Harness
+
+                    </label>
+
+
+                    <p>
+
+                        Choose which crank-angle-sensor
+                        sub-harness you want included.
+
+                    </p>
+
+
+                    <select id="cas-option">
+
+    <option value="">
+        Select One
+    </option>
+
+    <option value="No CAS">
+        No CAS Sub-Harness (-$50)
+    </option>
+
+    <option value="FC CAS">
+        FC CAS Sub-Harness
+    </option>
+
+    <option value="FD CAS">
+        FD CAS Sub-Harness
+    </option>
+
+</select>
+
+                </div>
+
+
+
+                <!-- IGNITION -->
+
+                <div class="option-group">
+
+                    <label
+                        class="option-title"
+                        for="ignition-option"
+                    >
+
+                        Ignition Sub-Harness
+
+                    </label>
+
+
+                    <p>
+
+                        Choose the ignition configuration
+                        you want the harness prepared for.
+
+                    </p>
+
+
+                    <select id="ignition-option">
+
+                        <option value="None">
+                           Select One
+                        </option>
+
+                        <option value="None">
+                            No Ignition Sub-Harness (includes connector to make your own sub-harness)
+                        </option>
+
+                        <option value="IGN-1A">
+                            IGN-1A Ignition Harness (+50)
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 CONFIGURED ORDER
+            ========================== -->
+
+            <div class="configured-summary">
+
+
+                <h3>
+                    YOUR CONFIGURATION
+                </h3>
+
+
+                <div class="summary-row">
+
+                    <span class="summary-label">
+                        Harness
+                    </span>
+
+                    <span class="summary-value">
+                        S4/S5 Haltech Elite 1500
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span class="summary-label">
+                        Injectors
+                    </span>
+
+                    <span
+                        class="summary-value"
+                        id="summary-injector"
+                        >
+                        Bosch EV14
+                        </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span class="summary-label">
+                        CAS
+                    </span>
+
+                    <span
+                        class="summary-value"
+                        id="summary-cas"
+                    >
+                        None
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span class="summary-label">
+                        Ignition
+                    </span>
+
+                    <span
+                        class="summary-value"
+                        id="summary-ignition"
+                    >
+                        None
+                    </span>
+
+                </div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <span>
+                        $849.99
+                    </span>
+
+                </div>
+
+
+                <button
+                    id="add-configured-harness"
+                    type="button"
+                >
+
+                    ADD CONFIGURED HARNESS TO CART
+
+                </button>
+
+
+                <p class="configuration-note">
+
+                    Harnesses are built to the configuration
+                    selected above. Verify your injector,
+                    CAS, and ignition setup before ordering.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="js/harness.js"></script>
+
+</body>
+
+</html>
