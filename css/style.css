@@ -2609,3 +2609,30 @@ footer {
         margin-bottom: 0 !important;
     }
     
+    @media (max-width: 900px) {
+
+    .site-header {
+        position: relative;
+        z-index: 9999;
+    }
+
+    .nav-wrap {
+        position: relative;
+    }
+
+    .nav.open {
+        display: flex !important;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        background: #111;
+    }
+
+    .menu-button {
+        position: relative;
+        z-index: 10001;
+        cursor: pointer;
+    }
+}
