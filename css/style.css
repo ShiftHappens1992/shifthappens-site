@@ -3,7 +3,7 @@
 }
 
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
@@ -253,7 +253,7 @@ a {
 .spec-layout {
     display: grid;
     grid-template-columns: 1.1fr .9fr;
-    gap: 100px
+    gap: 100px;
     position: relative;
     left: -100px;
 }
@@ -283,7 +283,7 @@ a {
 .story-panel {
     background: #fff;
     padding: 28px;
-    border: 1px solid #ddd
+    border: 1px solid #ddd;
     position: relative;
     top: -100px;
 }
@@ -2603,13 +2603,12 @@ footer {
         z-index: 1 !important;
     }
 }
+
 @media (max-width: 768px) {
 
     #build {
         margin-bottom: 0 !important;
     }
-    
-    @media (max-width: 900px) {
 
     .site-header {
         position: relative;
