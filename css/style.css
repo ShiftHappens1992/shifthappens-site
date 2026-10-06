@@ -2629,3 +2629,39 @@ footer {
         cursor: pointer;
     }
 }
+
+.fuel-chart-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fuel-system-chart {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+.fuel-system-chart th,
+.fuel-system-chart td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.fuel-system-chart th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fuel-system-chart td {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .fuel-system-chart th,
+  .fuel-system-chart td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
