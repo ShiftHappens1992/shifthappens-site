@@ -394,22 +394,16 @@ footer {
     }
 
     .nav {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: #111;
-        flex-direction: column;
-        padding: 20px
+    display: flex !important;
+    position: static !important;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px 14px;
+    background: transparent !important;
+    padding: 0 !important;
     }
-
-    .nav.open {
-        display: flex
-    }
-
     .menu-button {
-        display: block
+    display: none !important;
     }
 }
 
