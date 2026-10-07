@@ -2665,3 +2665,30 @@ footer {
     font-size: 14px;
   }
 }
+.rack-manual-pages {
+    float: right;
+    width: 40%;
+    max-width: 430px;
+    margin: 0 0 30px 40px;
+}
+
+.rack-manual-pages img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.18);
+}
+
+.clear-float {
+    clear: both;
+}
+@media (max-width: 768px) {
+    .rack-manual-pages {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 25px 0;
+    }
+}
