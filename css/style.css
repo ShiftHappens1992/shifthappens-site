@@ -2665,30 +2665,45 @@ footer {
     font-size: 14px;
   }
 }
-.rack-manual-pages {
-    float: right;
-    width: 40%;
-    max-width: 430px;
-    margin: 0 0 30px 40px;
+.rack-guide-layout {
+    width: min(1350px, calc(100vw - 50px));
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.rack-manual-pages img {
+.rack-guide-layout {
+    display: grid;
+    grid-template-columns: minmax(300px, 1.2fr) minmax(500px, 2fr);
+    gap: 35px;
+    align-items: start;
+}
+
+.rack-guide-text {
+    margin: 0;
+}
+
+.rack-top-pages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.rack-bottom-pages {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+
+    margin-top: 10px;
+}
+
+.rack-top-pages img,
+.rack-bottom-pages img {
     display: block;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 18px rgba(0,0,0,.18);
-}
-
-.clear-float {
-    clear: both;
-}
-@media (max-width: 768px) {
-    .rack-manual-pages {
-        float: none;
-        width: 100%;
-        max-width: 100%;
-        margin: 25px 0;
-    }
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
 }
