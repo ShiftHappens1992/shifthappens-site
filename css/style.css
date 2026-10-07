@@ -2735,3 +2735,58 @@ footer {
     border-radius: 6px;
     box-shadow: 0 4px 18px rgba(0,0,0,.18);
 }
+@media (max-width: 768px) {
+
+    /* Fix guide headings being shoved off the left side */
+    .guide-body .container > h2 {
+        position: relative !important;
+        left: 0 !important;
+        right: auto !important;
+        transform: none !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Keep this whole rack section inside the phone */
+    .rack-manual-layout {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        left: 0 !important;
+        transform: none !important;
+        margin: 20px 0 40px !important;
+    }
+
+    /* Paragraph, then pages 1-3 vertically */
+    .rack-top-row {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 20px !important;
+    }
+
+    /* Pages 4-8 vertically */
+    .rack-bottom-row {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 20px !important;
+        margin-top: 20px !important;
+    }
+
+    .rack-manual-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .rack-top-row img,
+    .rack-bottom-row img {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+    }
+}
