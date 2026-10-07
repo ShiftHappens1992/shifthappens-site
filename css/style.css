@@ -2658,6 +2658,41 @@ footer {
   white-space: nowrap;
 }
 
+.rack-manual-layout {
+    width: min(1180px, calc(100vw - 40px));
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    margin-bottom: 45px;
+}
+
+.rack-top-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.rack-bottom-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.rack-manual-text {
+    margin: 0;
+}
+
+.rack-top-row img,
+.rack-bottom-row img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.18);
+}
 @media (max-width: 600px) {
   .fuel-system-chart th,
   .fuel-system-chart td {
@@ -2665,45 +2700,38 @@ footer {
     font-size: 14px;
   }
 }
-.rack-guide-layout {
-    width: min(1350px, calc(100vw - 50px));
+.rack-manual-layout {
+    width: min(1180px, calc(100vw - 40px));
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 20px;
+    margin-bottom: 45px;
 }
 
-.rack-guide-layout {
+.rack-top-row {
     display: grid;
-    grid-template-columns: minmax(300px, 1.2fr) minmax(500px, 2fr);
-    gap: 35px;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 18px;
     align-items: start;
 }
 
-.rack-guide-text {
+.rack-bottom-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.rack-manual-text {
     margin: 0;
 }
 
-.rack-top-pages {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.rack-bottom-pages {
-    grid-column: 1 / -1;
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-
-    margin-top: 10px;
-}
-
-.rack-top-pages img,
-.rack-bottom-pages img {
-    display: block;
+.rack-top-row img,
+.rack-bottom-row img {
     width: 100%;
     height: auto;
+    display: block;
     border-radius: 6px;
-    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    box-shadow: 0 4px 18px rgba(0,0,0,.18);
 }
