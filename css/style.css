@@ -2785,3 +2785,19 @@ footer {
 .handling-hero {
         background-image: url("../images/depower.png");
 }
+/* FIX BUILD SECTION ON LAPTOP / DESKTOP */
+@media (min-width: 769px) and (max-width: 1600px) {
+
+    #build .section-label,
+    #build .container > h2 {
+        left: 0 !important;
+    }
+
+    #build .spec-layout {
+        left: 0 !important;
+    }
+
+    #build .story-column {
+        transform: translate(-50px, -300px);
+    }
+}
